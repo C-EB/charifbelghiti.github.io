@@ -1,0 +1,436 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #357ab7;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --accent-color: #ff6f61;
+  --header-footer-background: #2c3e50;
+  --card-background-color: #f1f1f1;
+  --dark-bg-color: #333;
+  --dark-text-color: #f9f9f9;
+  --dark-primary-color: #357ab7;
+  --dark-secondary-color: #4a90e2;
+  --dark-accent-color: #e74c3c;
+  --dark-card-background-color: #444;
+  --gradient-color-start: #FF7E5F;
+  --gradient-color-end: #feb47b;
+  --gradient-color-start-dark: #FF7E5F;
+  --gradient-color-end-dark: #feb47b;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+}
+
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#welcome-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#welcome-screen #particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.welcome-message {
+  text-align: center;
+  z-index: 2;
+  animation: slideIn 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-message h1 {
+  font-size: 3em;
+  margin: 0;
+  animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.welcome-message p {
+  font-size: 1.5em;
+  margin: 10px 0 0;
+  animation: fadeIn 2s ease-out forwards 0.5s;
+}
+
+header {
+  position: relative;
+  height: 200px; /* Adjust based on your preference */
+  overflow: hidden;
+  background: var(--primary-color); /* Set background color for light mode */
+  color: white;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode header {
+  background: var(--dark-primary-color); /* Set background color for dark mode */
+}
+
+#particles-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.header-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.logo-container img {
+  width: 50px;
+  height: 50px;
+}
+
+.header-title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.header-title h1 {
+  margin: 0;
+  font-size: 2em;
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dark-mode-toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+#dark-mode-toggle:hover {
+  transform: scale(1.1);
+}
+
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode #about {
+  background-color: var(--dark-card-background-color);
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-content img {
+  width: auto;
+  height: 100%;
+  max-width: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.about-content img:hover {
+  transform: scale(1.05);
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: justify;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.about-text button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #4a90e2, #357ab7); /* Gradient background */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: block;
+  text-align: center;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-text button.selected,
+.about-text button:hover {
+  background: linear-gradient(135deg, var(--gradient-color-start), var(--gradient-color-end)); /* Selected gradient */
+  transform: scale(1.1);
+}
+
+body.dark-mode .about-text button {
+  background: linear-gradient(135deg, var(--dark-primary-color), var(--dark-secondary-color));
+}
+
+body.dark-mode .about-text button.selected,
+body.dark-mode .about-text button:hover {
+  background: linear-gradient(135deg, var(--gradient-color-start-dark), var(--gradient-color-end-dark)); /* Selected gradient for dark mode */
+}
+
+#projects {
+  padding: 50px 20px;
+  background-color: var(--background-color);
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode #projects {
+  background-color: var(--dark-bg-color);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-item {
+  background-color: var(--card-background-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .project-item {
+  background-color: var(--dark-card-background-color);
+}
+
+.project-item img {
+  width: 100%;
+  height: 300px; /* Set a fixed height for images */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project-item img:hover {
+  transform: scale(1.05);
+}
+
+.project-item h3 {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.project-item p {
+  margin: 10px 0;
+  font-size: 16px;
+  display: none;
+  text-align: justify;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Add some space between buttons */
+  margin-top: 20px;
+}
+
+.project-item button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #4a90e2, #357ab7); /* Gradient background */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-item button.selected,
+.project-item button:hover {
+  background: linear-gradient(135deg, var(--gradient-color-start), var(--gradient-color-end)); /* Selected gradient */
+  transform: scale(1.1);
+}
+
+body.dark-mode .project-item button {
+  background: linear-gradient(135deg, var(--dark-primary-color), var(--dark-secondary-color));
+}
+
+body.dark-mode .project-item button.selected,
+body.dark-mode .project-item button:hover {
+  background: linear-gradient(135deg, var(--gradient-color-start-dark), var(--gradient-color-end-dark)); /* Selected gradient for dark mode */
+}
+
+footer {
+  padding: 20px;
+  background-color: var(--header-footer-background);
+  color: white;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode footer {
+  background-color: var(--dark-primary-color);
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-icons a {
+  color: #fff;
+  font-size: 30px;
+  transition: transform 0.3s ease;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.2);
+}
+
+body.dark-mode .contact-icons a {
+  color: var(--dark-text-color);
+}
+
+.signature {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-family: 'Brush Script MT', cursive; /* Signature style font */
+}
+
+body.dark-mode .signature {
+  color: var(--dark-text-color);
+}
+
+/* Fade-in effect */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll-to-top button */
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background: linear-gradient(135deg, #4a90e2, #357ab7); /* Gradient background */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#scroll-to-top:hover {
+  background: linear-gradient(135deg, #357ab7, #4a90e2);
+  transform: scale(1.1);
+}
+
+body.dark-mode #scroll-to-top {
+  background: linear-gradient(135deg, var(--dark-primary-color), var(--dark-secondary-color));
+}
+
+body.dark-mode #scroll-to-top:hover {
+  background: linear-gradient(135deg, var(--dark-secondary-color), var(--dark-primary-color));
+}
