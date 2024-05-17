@@ -147,7 +147,7 @@ projects.forEach(project => {
       button.classList.add('selected');
       setTimeout(() => {
         button.classList.remove('selected');
-      }, 1000); // Remove the selected class after 1 second
+      }, 100); // Remove the selected class after 1 second
     });
   });
 
