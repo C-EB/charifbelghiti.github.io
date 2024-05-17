@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-   // Check the saved mode in localStorage
-if (localStorage.getItem('mode') === 'dark') {
-  document.body.classList.add('dark-mode');
-}
+  // Check the saved mode in localStorage
+  if (localStorage.getItem('mode') === 'dark') {
+     document.body.classList.add('dark-mode');
+  }
+
 
   // Show welcome screen
   const welcomeScreen = document.getElementById('welcome-screen');
@@ -117,13 +118,15 @@ projects.forEach(project => {
     darkModeIcon.classList.add('fa-moon');
     localStorage.setItem('mode', 'light'); // Save mode
   }
-};
+ };
+
 
 
   darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     updateDarkModeIcon();
-  });
+ });
+
 
   // Set the correct initial icon
   updateDarkModeIcon();
