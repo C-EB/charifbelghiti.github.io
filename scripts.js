@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+   // Check the saved mode in localStorage
+if (localStorage.getItem('mode') === 'dark') {
+  document.body.classList.add('dark-mode');
+}
+
   // Show welcome screen
   const welcomeScreen = document.getElementById('welcome-screen');
   setTimeout(() => {
@@ -103,14 +108,17 @@ projects.forEach(project => {
   const darkModeIcon = document.getElementById('dark-mode-icon');
 
   const updateDarkModeIcon = () => {
-    if (document.body.classList.contains('dark-mode')) {
-      darkModeIcon.classList.remove('fa-moon');
-      darkModeIcon.classList.add('fa-sun');
-    } else {
-      darkModeIcon.classList.remove('fa-sun');
-      darkModeIcon.classList.add('fa-moon');
-    }
-  };
+  if (document.body.classList.contains('dark-mode')) {
+    darkModeIcon.classList.remove('fa-moon');
+    darkModeIcon.classList.add('fa-sun');
+    localStorage.setItem('mode', 'dark'); // Save mode
+  } else {
+    darkModeIcon.classList.remove('fa-sun');
+    darkModeIcon.classList.add('fa-moon');
+    localStorage.setItem('mode', 'light'); // Save mode
+  }
+};
+
 
   darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
