@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       image: 'assets/talend.jpg',
       title: 'Talend data integration project commercial data management ',
       description: 'The project comprised two distinct parts: <br>Part 1 Data Ingestion and Processing: <br>This phase involved setting up a PostgreSQL database (COM_INGESTION_DB) and developing SQL scripts for schema creation, table creation, and data insertion. I meticulously orchestrated the ingestion process, ensuring seamless integration of flat files into the database using Talend powerful data integration capabilities.<br>Part 2 Data Warehousing and Reporting: <br> In this phase, I expanded the PostgreSQL database to incorporate a data warehouse (VENTE_DWH) for advanced analytics and reporting purposes.',
-      link: 'https://drive.google.com/file/d/1tF53w_y6Ed0V9YX6fDbcYQxkBxrxYfUq/view?usp=sharing'
+      link: 'https://github.com/C-EB/talend-data-integration-project-commercial-data-management/tree/main'
     },
 	{
       image: 'assets/porshe.jpg',
