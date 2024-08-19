@@ -23,35 +23,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Load project items dynamically
   const projects = [
+
+    {
+      image: 'assets/detected_plate.png',
+      title: 'Moroccan License Plate Detection and Recognition',
+      description: 'This project detects and recognizes Moroccan vehicle license plates using the YOLOv3 model and Optical Character Recognition (OCR). The implementation is done in Python using OpenCV for image processing and Pytesseract for OCR. The system identifies license plates and interprets the characters, including Arabic letters and numbers.',
+      link: 'https://c-eb.github.io/Moroccan_License_Plate_Detection_and_Recognition/'
+    },
+    {
+      image: 'assets/Exec_Dashboard.png',
+      title: 'Sales data analysis',
+      description: 'The objective of this project is to analyze sales data using Power BI. The analysis provides insights into sales performance, customer demographics, product categories, and returns, enabling better business decisions.',
+      link: 'https://c-eb.github.io/sales_data_analysis/'
+    },
+    {
+      image: 'assets/kaggle_to_powerbi.gif',
+      title: 'Top UK Youtubers',
+      description: 'create a dashboard that provides insights into the top UK YouTubers in 2024',
+      link: 'https://c-eb.github.io/top_uk_youtubrs_2024/'
+    },
+
+	  
     {
       image: 'assets/password.jpg',
       title: 'Predict password strength',
       description: 'Predict password strength (strong, medium, weak) based on data',
-      link: 'https://github.com/C-EB/Predict_password_strength/blob/main/Predict_password_strength.ipynb'
+      link: 'https://c-eb.github.io/Predict_password_strength/'
     },
 	{
       image: 'assets/spam.jpg',
       title: 'Spam Classifier',
       description: 'Build a spam classifier to distinguish between spam and ham',
-      link: 'https://github.com/charifELBELGHITI/Spam_classifier/blob/main/Spam_classifier.ipynb'
+      link: 'https://c-eb.github.io/Spam_classifier/'
     },
 	{
       image: 'assets/house.jpg',
       title: 'Prediction of median house values in California districts',
       description: 'Trying various machine learning models to predict the median house values in California districts and comparing their performance to get the best results.',
-      link: 'https://github.com/charifELBELGHITI/prediction_of_median_house_values_in_Californian_districts/blob/main/prediction_of_median_house_values_in_Californian_districts.ipynb'
+      link: 'https://c-eb.github.io/prediction_of_median_house_values_in_Californian_districts/'
     },
 	{
       image: 'assets/talend.jpg',
       title: 'Talend data integration project commercial data management ',
       description: 'The project comprised two distinct parts: <br>Part 1 Data Ingestion and Processing: <br>This phase involved setting up a PostgreSQL database (COM_INGESTION_DB) and developing SQL scripts for schema creation, table creation, and data insertion. I meticulously orchestrated the ingestion process, ensuring seamless integration of flat files into the database using Talend powerful data integration capabilities.<br>Part 2 Data Warehousing and Reporting: <br> In this phase, I expanded the PostgreSQL database to incorporate a data warehouse (VENTE_DWH) for advanced analytics and reporting purposes.',
-      link: 'https://github.com/C-EB/talend-data-integration-project-commercial-data-management/tree/main'
+      link: 'https://c-eb.github.io/talend-data-integration-project-commercial-data-management/'
     },
 	{
       image: 'assets/porshe.jpg',
       title: 'Moroccan vehicle registration plates detection',
       description: 'A Python code for Moroccan car image processing and license plate detection using a YOLO v4 deep learning model.',
-      link: 'https://github.com/charifELBELGHITI/moroccan_vehicle_registration_plates_detection/blob/main/moroccan_vehicle_registration_plates_detection.ipynb'
+      link: 'https://c-eb.github.io/moroccan_vehicle_registration_plates_detection/'
     },
     {
       image: 'assets/opencv.jpg',
